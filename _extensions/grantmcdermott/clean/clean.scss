@@ -1,0 +1,442 @@
+/*-- scss:defaults --*/
+
+// Custom colours and variables
+
+$jet: #131516;
+$accent: #1f78b4;
+//$accent2: #9a2515;
+//$accent2: #e64173;
+$accent2: #2e7184;
+$right-arrow: "\2192"; // Unicode character for right arrow
+
+// fonts
+
+/*
+Note: This theme uses the Roboto font family, which it imports from Google
+  Fonts to ensure consistent weighting in addition to availability. While
+  you can use a local installation of Roboto, this is generally not 
+  recommended since the weighting will likely be wrong (probably too
+  light). OTOH, importing from Google Fonts can cause some issues in
+  certain secure environments due the external CDN (see:
+  https://github.com/grantmcdermott/quarto-revealjs-clean/issues/7). If
+  that's the case for you, simply comment out the `@import url(...)` line
+  below and it will default for the default Sans Serif font on your system
+  (e.g., Helvetica on a Mac). Circling back to the earlier point about
+  preserving consistent font weights, you may also wish to remove "Roboto"
+  from the choice set if the family is installed locally.
+*/
+//@import url(https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i);
+//$font-family-sans-serif: "Roboto", sans-serif !default;
+//$presentation-heading-font: "Roboto", sans-serif !default;
+
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,350,350i,400,400i);
+$font-family-sans-serif: "Nunito", sans-serif !default;
+$presentation-heading-font: "Nunito", sans-serif !default;
+
+$presentation-heading-color: $jet !default;
+$presentation-heading-font-weight: lighter;
+//$presentation-heading-line-height: 2;
+//$presentation-block-margin: 28px;
+$presentation-font-size-root: 32px;
+
+// colors
+//$body-bg: #f0f1eb !default;
+$body-color: $jet !default;
+$link-color: $accent !default;
+$selection-bg: #26351c !default;
+
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.5em;
+}
+
+.reveal p {
+  // font-weight: 300;
+  font-weight: lighter;
+  margin-top: 1.25em;
+}
+
+// title and headings
+
+#title-slide {
+  text-align: left;
+  white-space: nowrap;
+
+  .title {
+    //color: $body-color;
+    //color: #da291c;
+   // color: #0056b3;
+    color: #3182bd;
+    font-size: 1.4em;
+    font-weight: 350;
+    //font-weight: lighter;
+    border-style: groove;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid;
+
+  }
+
+  .subtitle {
+   // color:#1f78b4; 
+    color:#3182bd ;
+   // color: #138D96;
+   // font-style: italic;
+    margin-top: 0em;
+    font-weight: lighter;
+  }
+
+   .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: italic;
+  // font-size: 35%;
+   // white-space: initial;
+    //color: #7F7F7F;
+  }
+
+   .author,
+  .quarto-title-author-name {
+    color: $body-color;
+  //  font-size: 50%;
+ //   white-space: initial;
+    
+  }
+.date,
+  .quarto-title-author-name {
+    color: $body-color;
+   // font-size: 60%;
+   // white-space: nowrap;
+    
+  }
+  .footer,
+  .quarto-title-author-name {
+    color: $body-color;
+   // font-size: 60%;
+    white-space: nowrap;
+    
+  }
+
+
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 1em;
+      width: 50%;
+    }
+  }
+
+}
+
+
+.reveal h2 {
+  // font-weight: 350;
+  font-weight: lighter;
+  font-size: 1.4em;
+  color: #da291c;
+}
+
+.reveal h3 {
+  color: $accent;
+  //font-style: italic;
+  font-weight: 350;
+  //font-weight: lighter;
+  font-size: 1em;
+}
+
+.reveal h4 {
+  color: $accent2;
+  // font-weight: 350;
+  font-weight: normal;
+  margin-top: 1.25em;
+}
+
+// alerts etc.
+
+.alert {
+  color: $accent2;
+}
+
+.fg {
+  color: var(--col, $jet);
+ // font-weight: bold;
+  
+}
+
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+// lists
+
+// Unordered lists
+
+.reveal ul {
+  // font-weight: 300;
+  font-weight: lighter;
+  padding-left: 16px;
+
+  li::marker {
+    color: mix($accent, white, 70%);
+  }
+}
+
+.reveal ul ul {
+  list-style: none;
+
+  li:before {
+    content: $right-arrow;
+    color: mix($accent, white, 60%);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+  }
+}
+
+// Ordered lists
+
+.reveal ol {
+  // font-weight: 300;
+  font-weight: lighter;
+  padding-left: 16px;
+
+  li::marker {
+    color: $accent;
+  }
+}
+
+// Move "hamburger" menu button to top right
+
+.reveal .slide-menu-button {
+  position: fixed;
+  //top: 6px;
+  right: 50;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-menu-button > * {
+  pointer-events: auto;
+}
+
+// Move logo to the top left
+
+.reveal .slide-logo {
+  display: block;
+  position: fixed;
+  bottom: unset !important;
+  right: unset !important;
+ // top: 5px;
+ // left: 12px;
+ top: 10px;
+  left: 20px;
+  //  height: 100px !important;
+//  width: 100x !important;
+  height: 90px !important;
+  width: 90x !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+
+// Same for chalkboard buttons (with an offset)
+
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  // top: 12px;
+  // right: 24px;
+     bottom: 15px!important;
+   left: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+
+.reveal .slide-chalkboard-buttons > * {
+  pointer-events: auto;
+}
+
+// Beamer-style button link environment
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $accent;
+  border: 1px solid $accent;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+// Special catch for etable environment to ensure these table images
+// don't overflow the slide.
+// See: https://lrberge.github.io/fixest/articles/etable_new_features.html
+
+.etable {
+  width: 100%;
+  height: calc(100% - 3em); /* Adjust 3em based on the height of your header, if necessary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+//.reveal .slide-background-content {
+//    background-image: url(qr.svg) !important;
+//}
+ 
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
+.reveal ul ul ul {
+    list-style: none;
+    text-align: nowrap;
+}
+
+.reveal ul ul ul li:before {
+    //content: "-";
+    color: #70aebf;
+    display: inline-block;
+    width: .5em;
+    margin-left: 1em;
+    margin-right: 1em
+}
+
+
+.reveal .slides section .fragment.fade-out.visible {
+//    opacity: .5;
+//    visibility: visible;
+}
+
+.reveal .slide ul li, .reveal .slide ol li {
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    white-space: nowrap;
+}
+
+.reveal ul ul li:before {
+    content: "\2013";
+    color: #70aebf;
+    display: inline-block;
+    width: 1em;
+    margin-left: -0.3em;
+    margin-right: .5em;
+}
+
+.reveal .r-stack>* {
+    margin-top: 1em;
+}
+
+.reveal .slide ul li, .reveal .slide ol li {
+    margin-top: 0.4em;
+    margin-bottom: -0.2em !important;
+    margin-left: -0.3em !important
+}
+
+.reveal ul ul,.reveal ul ol,.reveal ol ol,.reveal ol ul {
+    display: block;
+    margin-left: 25px !important
+}
+
+.caption{
+   text-align: center;
+}
+
+.All {
+  display: table-row;
+}
+.Sum {
+  display: table-cell;
+  vertical-align: middle;
+}
+.Fraction {
+    display: table-cell;
+    text-align: center;    
+}
+.Denominator{
+    border-top: 1px solid #000;
+    display: block;
+}
+.Fraction, .Numerator, .Denominator {
+    padding: 0px 5px;    
+}
+
+.base-timer {
+  left: 25%;
+  margin-top: 2.5em;
+}
+
+div.base-timer svg circle, div.base-timer svg path {
+    fill: white;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform-origin: center;
+  /* data update happens every 1s so keep transition duration as less,
+     otherwise you get strange behaviour, mainly jumps */
+  transition: 0.1s ease-in-out all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.lvl0 {
+  color: orange;
+}
+
+.base-timer__path-remaining.lvl1 {
+  color: red;
+}
+
+

@@ -1,0 +1,31 @@
+{
+    "id": "70595251",
+    "path": "~/Desktop/UPNA/Workshop_UPNA/workshop_upna_slides/mixed_effects_upna.qmd",
+    "project_path": "mixed_effects_upna.qmd",
+    "type": "quarto_markdown",
+    "hash": "3540154201",
+    "contents": "",
+    "dirty": false,
+    "created": 1736790727727.0,
+    "source_on_save": true,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "35,0",
+        "scrollLine": "18",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "0",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2503:1433.5999755859375"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1737540719,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1737540719385,
+    "read_only": false,
+    "read_only_alternatives": []
+}
