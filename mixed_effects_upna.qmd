@@ -2469,7 +2469,7 @@ bg="#1f78b4"} format)
 -   [Loss]{fg="#FFFFFF" bg="#da291c"} of information:
     -   [Reduction]{.fg style="--col: #da291c"} of [statistical
         power]{.fg style="--col: #1f78b4"} [(i.e., ability to
-        ]{style="font-size: 92%;"}[detect]{.fg style="--col: #1f78b4"}
+        ]{style="font-size: 92%;"} [detect]{.fg style="--col: #1f78b4"}
         an [effect]{.fg style="--col: #1f78b4"} if it truly [exists]{.fg
         style="--col: #1f78b4"})
 :::
