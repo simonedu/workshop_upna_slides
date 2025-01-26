@@ -1,6 +1,0 @@
-- name: Publish to Netlify (and render)
-  uses: quarto-dev/quarto-actions/publish@v2
-  with:
-    target: netlify
-    path: /Users/simonruiz/Desktop/UPNA/Workshop_UPNA/workshop_upna_slides
-    NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
